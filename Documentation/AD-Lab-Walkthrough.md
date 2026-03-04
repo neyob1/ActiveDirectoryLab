@@ -1,11 +1,44 @@
 
-## 🌐 Network Overview
+# 1.Domain Controller Promotion
 
-Domain Name: lab.local  
-Domain Controller: Windows Server 2022  
-Client Machine: Windows 11  
+## Installing Active Directory Domain Services
 
-(Add network diagram screenshot here if you create one)
+1. Opened **Server Manager**
+2. Selected **Add Roles and Features**
+3. Installed:
+   - Active Directory Domain Services (AD DS)
+4. Enabled automatic restart
+
+## Promoting to Domain Controller
+
+1. Clicked **Promote this server to a domain controller**
+2. Selected **Add a new forest**
+3. Entered domain name: `lab.local`
+4. Set Directory Services Restore Mode (DSRM) password
+5. Completed installation and rebooted
+
+# 2. 
+
+## Installing Active Directory Domain Services
+
+1. Opened **Server Manager**
+2. Selected **Add Roles and Features**
+3. Installed:
+   - Active Directory Domain Services (AD DS)
+4. Enabled automatic restart
+
+## Promoting to Domain Controller
+
+1. Clicked **Promote this server to a domain controller**
+2. Selected **Add a new forest**
+3. Entered domain name: `lab.local`
+4. Set Directory Services Restore Mode (DSRM) password
+5. Completed installation and rebooted
+
+
+### Result
+
+Server successfully promoted to Domain Controller.
 
 
 ## 🔐 Features Implemented
