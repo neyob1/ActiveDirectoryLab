@@ -59,9 +59,8 @@ Designed OU structure to reflect enterprise organizational hierarchy and enforce
 - Within the server I went to Tools/Network/NAT Network and renamed the network to ADnetwork for easier identification
 
   Below are the network details
-![image alt](https://github.com/neyob1/ActiveDirectoryLab/blob/main/Documentation/Screenshots/Screenshot%202026-02-28%20160558.png?raw=true)
 
-<img src ="https://github.com/neyob1/ActiveDirectoryLab/blob/main/Documentation/Screenshots/Screenshot%202026-02-28%20160558.png?raw=true
+<img src="Documentation/Screenshots/Screenshot%202026-02-28%20160558.png" width="600" height="300">
 
 #### Configuring Static IP Adress
 
