@@ -1,4 +1,3 @@
----
 
 ## 🌐 Network Overview
 
@@ -8,7 +7,6 @@ Client Machine: Windows 11
 
 (Add network diagram screenshot here if you create one)
 
----
 
 ## 🔐 Features Implemented
 
