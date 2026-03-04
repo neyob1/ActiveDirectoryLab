@@ -40,6 +40,17 @@ The objective of this project was to design and secure a simulated enterprise Ac
 
 ## Domain Users and Group Structure 
 
+
+
+
+
+
+
+
+
+
+
+
 ![image alt](https://github.com/neyob1/ActiveDirectoryLab/blob/main/Documentation/Screenshots/Screenshot%202026-02-28%20160558.png?raw=true)
 drag & drop screenshots here or use imgur and reference them using imgsrc
 
