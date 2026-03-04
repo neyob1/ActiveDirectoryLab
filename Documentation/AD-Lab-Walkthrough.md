@@ -38,7 +38,7 @@ The objective of this project was to design and secure a simulated enterprise Ac
 
 -Verified domain functionality post-restart.
 
-### 2. Domain Users and Group Structure 
+### 2. Creating Domain Users
 
 Created Organizational Units to simulate departments:
 
@@ -55,13 +55,14 @@ Created domain users and assigned them to appropriate security groups.
 Designed OU structure to reflect enterprise organizational hierarchy and enforce administrative boundaries.
 
 ### 3. Attaching Windows 11 Client to Domain
+
 #### Network Details
 - Within the server I went to Tools/Network/NAT Network and renamed the network to ADnetwork for easier identification
 
-  Below are the network details
+Below are the network details
 
-<img src="Documentation/Screenshots/Network%20Details.png" width="600" height="300">
-![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png =250x250)
+<img width="500" height="400" alt="Network Details" src="https://github.com/user-attachments/assets/d37ed400-e722-46ac-9e21-c9b6aeb6813f" />
+
 #### Configuring Static IP Adress
 
 -Set up a static IP adress for both the Windows server and client by onfiguring the network adapter settings to match the IP configuration identified via ipconfig.
@@ -72,7 +73,17 @@ Static addressing prevents domain authentication failures caused by dynamic IP c
 #### Attaching to the Domain
 
 -In the settings for the client I went to Access work or school/Join this device to a local active directory domain/enter domain name/enter username and password/restart the computer
+
 -To confirm the client was attached to the domain I went to Active Direcetory Users and Computer and confirmed the computer(WS01) was listed
+
+Here we can see that our Windows 11 computer is attached to the domain
+<img width="500" height="400" alt="Screenshot 2026-02-28 212015" src="https://github.com/user-attachments/assets/3adf9ab8-a765-47ba-94c7-2923bb1d7ab3" />
+
+### 4. Creating Orginazational Units and Groups
+
+-Created three diffrent Orginazational Units (OUs) reprsenting diffrent departments (Engineering,Management,IT) to reprsent a real work enviornment
+
+-
 
 
 
