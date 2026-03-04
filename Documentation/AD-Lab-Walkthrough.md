@@ -60,7 +60,7 @@ Designed OU structure to reflect enterprise organizational hierarchy and enforce
 
   Below are the network details
 
-<img src="Documentation/Screenshots/Screenshot%202026-02-28%20160558.png" width="600" height="300">
+<img src="Documentation/Screenshots/Network%20Details.png" width="600" height="300">
 
 #### Configuring Static IP Adress
 
