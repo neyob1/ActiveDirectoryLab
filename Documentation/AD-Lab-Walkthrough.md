@@ -28,7 +28,7 @@ The objective of this project was to design and secure a simulated enterprise Ac
 
 ## Steps
 
-### Setting Up Server as Domain Controller
+### 1.Setting Up Server as Domain Controller
 
 -Installed Active Directory Domain Services (AD DS) role.
 
@@ -38,20 +38,64 @@ The objective of this project was to design and secure a simulated enterprise Ac
 
 -Verified domain functionality post-restart.
 
-## Domain Users and Group Structure 
+### 2. Domain Users and Group Structure 
 
+Created Organizational Units to simulate departments:
 
+Engineering
 
+Management
 
+IT
 
+Implemented role-based security groups (e.g., Engineering Share).
 
+Created domain users and assigned them to appropriate security groups.
 
+Designed OU structure to reflect enterprise organizational hierarchy and enforce administrative boundaries.
 
+### 3. Attaching Windows 11 Client to Domain
+#### Network Details
+- Within the server I went to Tools/Network/NAT Network and renamed the network to ADnetwork for easier identification
 
-
-
-
+  Below are the network details
 ![image alt](https://github.com/neyob1/ActiveDirectoryLab/blob/main/Documentation/Screenshots/Screenshot%202026-02-28%20160558.png?raw=true)
+
+<img src ="https://github.com/neyob1/ActiveDirectoryLab/blob/main/Documentation/Screenshots/Screenshot%202026-02-28%20160558.png?raw=true
+
+#### Configuring Static IP Adress
+
+-Set up a static IP adress for both the Windows server and client by onfiguring the network adapter settings to match the IP configuration identified via ipconfig.
+-Same configuration was then repeated on the Windows 11 client
+
+Static addressing prevents domain authentication failures caused by dynamic IP changes.
+
+#### Attaching to the Domain
+
+-In the settings for the client I went to Access work or school/Join this device to a local active directory domain/enter domain name/enter username and password/restart the computer
+-To confirm the client was attached to the domain I went to Active Direcetory Users and Computer and confirmed the computer(WS01) was listed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 drag & drop screenshots here or use imgur and reference them using imgsrc
 
 Every screenshot should have some text explaining what the screenshot is about.
