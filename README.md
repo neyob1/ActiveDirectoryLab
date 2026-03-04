@@ -1,59 +1,20 @@
-<h1>Active Directory Home Lab</h1>
+# Active Directory Lab
 
+## 📌 Project Overview
 
+This project simulates a small enterprise Active Directory environment using Windows Server 2022 as a Domain Controller and Windows 11 as a domain-joined client.
 
-<h2>Description</h2>
-Project consists of a simple PowerShell script that walks the user through "zeroing out" (wiping) any drives that are connected to the system. The utility allows you to select the target disk and choose the number of passes that are performed. The PowerShell script will configure a diskpart script file based on the user's selections and then launch Diskpart to perform the disk sanitization.
-<br />
+The lab demonstrates domain configuration, OU structure, group-based access control, GPO enforcement, and PowerShell automation.
 
+---
 
-<h2>Languages and Utilities Used</h2>
+## 🖥️ Lab Environment
 
-- <b>PowerShell</b> 
+- Windows Server 2022 (Domain Controller)
+- Windows 11 (Client Machine)
+- Oracle VirtualBox (Virtualization Platform)
+- NAT Network Configuration
 
-<h2>Environments Used </h2>
+---
 
-- <b>Windows 11 VM</b> (21H2)
-- <b>Windows Server</b> (21H2)
-
-
-<h2>Program walk-through:</h2>
-
-<p align="center">
-Setting Up Server as Domain Controller: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Select the disk:  <br/>
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-
-<!--
- ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
---!>
+## 🗂️ Project Structure
