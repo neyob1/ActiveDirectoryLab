@@ -61,7 +61,7 @@ Designed OU structure to reflect enterprise organizational hierarchy and enforce
   Below are the network details
 
 <img src="Documentation/Screenshots/Network%20Details.png" width="600" height="300">
-
+![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png =250x250)
 #### Configuring Static IP Adress
 
 -Set up a static IP adress for both the Windows server and client by onfiguring the network adapter settings to match the IP configuration identified via ipconfig.
