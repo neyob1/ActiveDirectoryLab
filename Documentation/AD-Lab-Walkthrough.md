@@ -1,12 +1,10 @@
 # Active Directory Lab
 
 ## Objective
-[Brief Objective - Remove this afterwards]
 
 The objective of this project was to design and secure a simulated enterprise Active Directory environment while implementing identity and access management best practices. This lab focused on enforcing least-privilege access through role-based security groups and automating account lifecycle tasks using PowerShell to improve administrative efficiency and reduce security risk. The goal was to replicate real-world cybersecurity and IT operations workflows in a controlled virtual environment.
 
 ### Skills Learned
-[Bullet Points - Remove this afterwards]
 
 **Active Directory Administration** – Created and managed users, groups, and Organizational Units within a Windows Server domain environment.
 
@@ -21,65 +19,59 @@ The objective of this project was to design and secure a simulated enterprise Ac
 **Security-Oriented Lab Design** – Built a virtualized enterprise environment to simulate real-world IT and cybersecurity operations.
 
 ### Tools Used
-[Bullet Points - Remove this afterwards]
 -Windows 11 
+
 -Windows 22 Server
+
 -Oracle VB
+
+### Project Setup
+
+- Crated an Administrator account which will be in charge of the domain
+
+- Installed two roles the Active Directory Domain Services(AD DS) and the Active Directory Certificate Services(AD CS)
+
+<img width="300" height="200" alt="shows install for the setup" src="https://github.com/user-attachments/assets/77d0ae26-a781-4c1b-887c-2ccd4a63a982" />
+
+- Through AD DS promoted the server to a Domain Controller (lab.local).
+
+- Installed and configured the server on AD CS
 
 ## Steps
 
-### 1.Setting Up Server as Domain Controller
+### 1. Creating Domain Users
 
--Installed Active Directory Domain Services (AD DS) role.
+- Created 4 domain users assigining each of them attributes\
 
--Promoted the server to a Domain Controller (xyz.local).
+<img width="500" height="400" alt="Shows the users" src="https://github.com/user-attachments/assets/12f0c65f-1e07-47af-ba93-67c5e5678e8c" />
 
--Configured DNS automatically during promotion.
+- These users will be used for additional administration of the domain
 
--Verified domain functionality post-restart.
 
-### 2. Creating Domain Users
-
-Created Organizational Units to simulate departments:
-
-Engineering
-
-Management
-
-IT
-
-Implemented role-based security groups (e.g., Engineering Share).
-
-Created domain users and assigned them to appropriate security groups.
-
-Designed OU structure to reflect enterprise organizational hierarchy and enforce administrative boundaries.
-
-### 3. Attaching Windows 11 Client to Domain
+### 2. Attaching Windows 11 Client to Domain
 
 #### Network Details
-- Within the server I went to Tools/Network/NAT Network and renamed the network to ADnetwork for easier identification
 
-Below are the network details
+- Within the server I went to Tools/Network/NAT Network and renamed the network to ADnetwork for easier identification
 
 <img width="500" height="400" alt="Network Details" src="https://github.com/user-attachments/assets/d37ed400-e722-46ac-9e21-c9b6aeb6813f" />
 
 #### Configuring Static IP Adress
 
--Set up a static IP adress for both the Windows server and client by onfiguring the network adapter settings to match the IP configuration identified via ipconfig.
--Same configuration was then repeated on the Windows 11 client
+- Set up a static IP address for both the Windows server and client by onfiguring the network adapter settings to match the IP configuration identified via ipconfig.
+- Same configuration was then repeated on the Windows 11 client
 
 Static addressing prevents domain authentication failures caused by dynamic IP changes.
 
 #### Attaching to the Domain
 
--In the settings for the client I went to Access work or school/Join this device to a local active directory domain/enter domain name/enter username and password/restart the computer
+- In the settings for the client I went to Access work or school/Join this device to a local active directory domain/enter domain name/enter username and password/restart the computer
 
--To confirm the client was attached to the domain I went to Active Direcetory Users and Computer and confirmed the computer(WS01) was listed
+- To confirm the client was attached to the domain I went to Active Direcetory Users and Computer and confirmed the computer(WS01) was listed
 
-Here we can see that our Windows 11 computer is attached to the domain
 <img width="500" height="400" alt="Screenshot 2026-02-28 212015" src="https://github.com/user-attachments/assets/3adf9ab8-a765-47ba-94c7-2923bb1d7ab3" />
 
-### 4. Orginazational Units and Access Control Design
+### 3. Orginazational Units and Access Control Design
 
 - Created three diffrent Orginazational Units (OUs) reprsenting diffrent departments (Engineering,Management,IT) to reprsent a real work enviornment
 - Designed the OU structure to reflect departmental seperation when it comes to administration access
@@ -87,8 +79,6 @@ Here we can see that our Windows 11 computer is attached to the domain
   Added:
 - 2 users from the Engineering Department
 - 1 user from management(simulating cross-department collaboration)
-
-Here are all the users who are present in Engineering Share
 
 <img width="500" height="400" alt="Screenshot 2026-03-01 123542" src="https://github.com/user-attachments/assets/befe4f31-69d9-4d30-a640-c0172de113c1" />
 
@@ -99,42 +89,39 @@ Under advanced security settings we can ensure that Engineering Share group (bes
 <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/b513b326-ec44-4a9f-884f-c07cfc72b42d" />
 
 
-
 This approach of creating orginizational groups and even groups within them allows us to add role-based permissions to an entire group instead of having to modify each user indiviudally promoting efficiency.
 
 ### 5. Group Policy Objects
 
-Overview
-
-Group Policy Objects (GPOs) allow administrators to centrally manage system configurations and user environments within an Active Directory domain. Policies can be linked to domains or Organizational Units to enforce standardized settings across groups of users or computers.
+Overview: Group Policy Objects (GPOs) allow administrators to centrally manage system configurations and user environments within an Active Directory domain. The GPO that will be created in this step is a desktop background for the engineering department.
 
 #### Policy Configuration
 
-- To simulate centralized management within a corporate environment, a Group Policy Object was created for the Engineering Organizational Unit.
+- Created a custom white desktop wallpaper
 
-- Created a custom desktop wallpaper to represent a department-specific configuration.
-
-- Stored the wallpaper inside the NETLOGON share, which allows domain-wide access to files used in policy deployment.
+- Stored the wallpaper inside the NETLOGON share, which allows domain-wide access to files used in policy deployment
 
 <img width="500" height="400" alt="movingwallpaperintoNETLOGON" src="https://github.com/user-attachments/assets/616e9400-0ff6-49ac-b6f4-b89d3f3cb236" />
 
-- Copied the file path and configured the wallpaper setting within the newly created GPO.
+- Copied the file path so it can be pasted into the policy setting later
 
 #### Policy Deployment
 
-- Linked the GPO to the Engineering OU.
+- Created a GPO called "SetEngineeringBackground" for the engineering OU 
 
-<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/fbead06a-af0c-4222-b64b-b7e7b52573c3" />
+<img width="400" height="400" alt="Setengbackground" src="https://github.com/user-attachments/assets/dd165971-ff2e-4ecf-b2ab-3f0b4846547a" />
 
-- Logged into domain accounts belonging to Engineering users.
+- Located the policy setting for desktop wallaper where I was able paste the file path from earlier and enable it
 
-- Verified that the configured desktop background was automatically applied.
+<img width="500" height="400" alt="pasted the filepath for wallpaper policy" src="https://github.com/user-attachments/assets/fee5689b-6e2f-4796-816b-a031c84b43e1" />
 
-- Users outside the Engineering OU were not affected by the policy, confirming that the GPO was correctly scoped.
+- Logged into domain accounts belonging to Engineering users and verified that they did have the wallpaper active
+
+- Users outside the Engineering OU were not affected by the policy, confirming that the GPO was correctly applied.
 
 ### 5. Ticket Processing
 
-For this step I processed a ticket regarding a manager who was satisfied with the background we set in the previous step but wanted to prevent the engineers from having the ability to change the background, he emphasized that he only wanted this to apply to the engineering department.
+Overview: For this step I processed a ticket regarding a manager who was satisfied with the background we set in the previous step but wanted to prevent the engineers from having the ability to change the background, he emphasized that he only wanted this to apply to the engineering department.
 
 <img width="500" height="400" alt="Screenshot 2026-03-01 143933" src="https://github.com/user-attachments/assets/e3a07205-3e15-4486-b721-9fa6ba135f5f" />
 
@@ -148,9 +135,9 @@ For this step I processed a ticket regarding a manager who was satisfied with th
 
 ### 6. Task Automation with Powershell
 
-Objective: Task automation is beneficial because instead of doing tasks manually in AD such as creating users manually like we did earlier in step 2, we can write a script that does all of it for us. For this step I utilized Powershell to create a user and fill all the attributes for that user.
+Overview: Task automation is beneficial because instead of doing tasks manually in AD such as creating users manually like we did earlier in step 2, we can write a script that does all of it for us. For this step I utilized Powershell to create an individual user for the domain.
 
-The script I used to create the user can be seen below
+Powershell script to create the user: 
 
 <img width="500" height="400" alt="Automating Task w Powershell" src="https://github.com/user-attachments/assets/609051e2-f99b-435b-8330-94382dd5a8c8" />
 
@@ -184,11 +171,9 @@ For a more effecient practice I repeated this password reset using Powershell au
 
 <img width="500" height="400" alt="reset password PS" src="https://github.com/user-attachments/assets/6d0ab820-9148-46cf-aeb1-56f4c668fd07" />
 
-PowerShell allows administrators to quickly reset passwords and unlock accounts without navigating the graphical interface.
+PowerShell allows administrators to quickly reset passwords and unlock accounts without navigating the Active Directory which lowers the risk for any configuration errors
 
-#### Real World Considerations
-
-Applies to both manual and automated process:
+##### Applies to both manual and automated process:
 
 - In a real-world enviornment the user would be notified of the temporary password through a secure form of communication
 - The user would then login on thier end using that password where they would then prompted to reset it again using thier own password
