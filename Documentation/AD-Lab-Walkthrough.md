@@ -23,42 +23,47 @@ The objective of this project was to design and secure a simulated enterprise Ac
 
 -Windows 22 Server
 
--Oracle VB
+-Oracle VB Manager
 
 ### Project Setup
 
-- Crated an Administrator account which will be in charge of the domain
+- Crated an Administrator account which will be in charge of the domain.
 
-- Installed two roles the Active Directory Domain Services(AD DS) and the Active Directory Certificate Services(AD CS)
+- Installed two roles the Active Directory Domain Services(AD DS) and the Active Directory Certificate Services(AD CS).
 
 <img width="300" height="200" alt="shows install for the setup" src="https://github.com/user-attachments/assets/77d0ae26-a781-4c1b-887c-2ccd4a63a982" />
 
 - Through AD DS promoted the server to a Domain Controller (lab.local).
 
-- Installed and configured the server on AD CS
+- Installed and configured the server on AD CS.
 
 ## Steps
 
 ### 1. Creating Domain Users
 
-- Created 4 domain users assigining each of them attributes\
+- Created 4 domain users assigining each of them attributes.
 
 <img width="500" height="400" alt="Shows the users" src="https://github.com/user-attachments/assets/12f0c65f-1e07-47af-ba93-67c5e5678e8c" />
 
-- These users will be used for additional administration of the domain
+- These users will be used for additional administration of the domain.
 
 
 ### 2. Attaching Windows 11 Client to Domain
 
-#### Network Details
+#### Configuring Network
 
-- Within the server I went to Tools/Network/NAT Network and renamed the network to ADnetwork for easier identification
+- Within VB manager I went to Tools/Network/NAT Network and created a network named ADNetwork, the domain will run on this network.
 
-<img width="500" height="400" alt="Network Details" src="https://github.com/user-attachments/assets/d37ed400-e722-46ac-9e21-c9b6aeb6813f" />
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/f9ff176d-83cd-4cc7-876c-2e30c7861d0c" />
 
-#### Configuring Static IP Adress
+- Entered the settings for both the Windows 11 client and the server and assigned both to the ADNetwork
+
+<img width="500" height="400" alt="Network Details" src="https://github.com/user-attachments/assets/539aab18-f2b3-4f27-9663-0aa88f15c520" />
+
+#### Configuring Static IP Address
 
 - Set up a static IP address for both the Windows server and client by onfiguring the network adapter settings to match the IP configuration identified via ipconfig.
+
 - Same configuration was then repeated on the Windows 11 client
 
 Static addressing prevents domain authentication failures caused by dynamic IP changes.
@@ -72,6 +77,8 @@ Static addressing prevents domain authentication failures caused by dynamic IP c
 <img width="500" height="400" alt="Screenshot 2026-02-28 212015" src="https://github.com/user-attachments/assets/3adf9ab8-a765-47ba-94c7-2923bb1d7ab3" />
 
 ### 3. Orginazational Units and Access Control Design
+
+Overview: The approach of creating orginizational groups and even groups within them allows us to add role-based permissions to an entire group instead of having to modify each user indiviudally promoting efficiency.
 
 - Created three diffrent Orginazational Units (OUs) reprsenting diffrent departments (Engineering,Management,IT) to reprsent a real work enviornment
 - Designed the OU structure to reflect departmental seperation when it comes to administration access
@@ -89,9 +96,7 @@ Under advanced security settings we can ensure that Engineering Share group (bes
 <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/b513b326-ec44-4a9f-884f-c07cfc72b42d" />
 
 
-This approach of creating orginizational groups and even groups within them allows us to add role-based permissions to an entire group instead of having to modify each user indiviudally promoting efficiency.
-
-### 5. Group Policy Objects
+### 4. Group Policy Objects
 
 Overview: Group Policy Objects (GPOs) allow administrators to centrally manage system configurations and user environments within an Active Directory domain. The GPO that will be created in this step is a desktop background for the engineering department.
 
@@ -121,7 +126,9 @@ Overview: Group Policy Objects (GPOs) allow administrators to centrally manage s
 
 ### 5. Ticket Processing
 
-Overview: For this step I processed a ticket regarding a manager who was satisfied with the background we set in the previous step but wanted to prevent the engineers from having the ability to change the background, he emphasized that he only wanted this to apply to the engineering department.
+Overview: In IT environments, help desk requests are typically managed through a ticketing system. A ticket represents a user request or issue that requires administrative action, such as password resets, account unlocks, or access permissions. For this step I processed a hypothetical ticket coming from a manager regarding the desktop wallpaper that set in step 4. 
+
+Ticket:
 
 <img width="500" height="400" alt="Screenshot 2026-03-01 143933" src="https://github.com/user-attachments/assets/e3a07205-3e15-4486-b721-9fa6ba135f5f" />
 
@@ -214,10 +221,4 @@ PowerShell allows administrators to quickly reset passwords and unlock accounts 
 
 
 
-drag & drop screenshots here or use imgur and reference them using imgsrc
 
-Every screenshot should have some text explaining what the screenshot is about.
-
-Example below.
-
-*Ref 1: Network Diagram*
