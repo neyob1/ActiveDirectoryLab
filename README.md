@@ -151,9 +151,7 @@ Powershell script to create the user:
 
 ### 7. Resetting AD Passwords
 
-#### Overview
-
-Account lockout policies are commonly used in enterprise environments to prevent unauthorized access and brute-force login attempts. In this lab, an account lockout threshold was configured through Group Policy to simulate a security control used in real-world Active Directory environments.
+Overview: Account lockout policies are commonly used in enterprise environments to prevent unauthorized access and brute-force login attempts. In this lab, an account lockout threshold was configured through Group Policy to simulate a security control used in real-world Active Directory environments.
 
 After three failed login attempts, the user account becomes locked and requires administrative intervention to regain access.
 
