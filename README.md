@@ -83,6 +83,7 @@ Overview: The approach of creating orginizational groups and even groups within 
 - Created three diffrent Orginazational Units (OUs) reprsenting diffrent departments (Engineering,Management,IT) to reprsent a real work enviornment
 - Designed the OU structure to reflect departmental seperation when it comes to administration access
 - Created a security group called Engineering Share to grant that specific group access to shared resources
+
   Added:
 - 2 users from the Engineering Department
 - 1 user from management(simulating cross-department collaboration)
