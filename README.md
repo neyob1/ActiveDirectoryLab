@@ -159,13 +159,13 @@ After three failed login attempts, the user account becomes locked and requires 
 
 First I took a manual approach to for the password reset by doing it through the domain controller, this method is less efficient but demonstrated what goes on behind the scenes.
 
-- Configured an **Account Lockout Policy** under Group Policy Management which locked users out after 3 incorrect login attempts
+- Configured an Account Lockout Policy under Group Policy Management which locked users out after 3 incorrect login attempts
 
 <img width="500" height="400" alt="Account Lockout Threshold" src="https://github.com/user-attachments/assets/5f142a17-ab5a-4906-9c0d-170c5aa0c1ac" />
 
 - Switched over to the Windows Client and triggered the lockout using one of the created users
 
-- Reset the user's password through **Active Directory Users and Computers**
+- Reset the user's password through Active Directory Users and Computers
 
 <img width="500" height="400" alt="pass reset" src="https://github.com/user-attachments/assets/dac8b6de-c0cd-4afb-981f-e545af45e4e6" />
 
