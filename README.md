@@ -27,12 +27,7 @@ The objective of this project was to design and secure a simulated enterprise Ac
 
 ### Lab Setup
 
-- Wireshark shows all interfaces with activity.
-<img width="1073" height="299" alt="Screenshot 2026-03-29 204609" src="https://github.com/user-attachments/assets/97a69c0c-3af3-4232-a19d-060d3759db6a" />
-
-- Using Manage Interfaces, unnecessary interfaces can be hidden to reduce clutter.
-
-
+- Crated an Administrator account which will be in charge of the domain.
 - Installed two roles the Active Directory Domain Services(AD DS) and the Active Directory Certificate Services(AD CS).
 
 <img width="300" height="200" alt="shows install for the setup" src="https://github.com/user-attachments/assets/77d0ae26-a781-4c1b-887c-2ccd4a63a982" />
