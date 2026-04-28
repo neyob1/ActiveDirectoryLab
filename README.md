@@ -156,7 +156,7 @@ After three failed login attempts, the user account becomes locked and requires 
 
 #### Manual Process
 
-First I took a manual approach to for the password reset by doing it through the domain controller, this method is less efficient but demonstrated what goes on behind the scenes.
+First I took a manual approach for the password reset by doing it through the domain controller, this method is less efficient but demonstrated what goes on behind the scenes.
 
 - Configured an Account Lockout Policy under Group Policy Management which locked users out after 3 incorrect login attempts
 
