@@ -77,7 +77,7 @@ Static addressing prevents domain authentication failures caused by dynamic IP c
 
 ### 3. Orginazational Units and Access Control Design
 
-Overview: The approach of creating orginizational groups and even groups within them allows us to add role-based permissions to an entire group instead of having to modify each user indiviudally promoting efficiency.
+Overview: The approach of creating orginizational units and even groups within them allows us to add role-based permissions to an entire group instead of having to modify each user indiviudally promoting efficiency.
 
 - Created three diffrent Orginazational Units (OUs) reprsenting diffrent departments (Engineering,Management,IT) to reprsent a real work enviornment
 - Designed the OU structure to reflect departmental seperation when it comes to administration access
